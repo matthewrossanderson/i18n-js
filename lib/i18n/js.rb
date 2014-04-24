@@ -28,7 +28,7 @@ module I18n
       end
     end
 
-    def segments_per_locale(pattern,scopes)
+    def self.segments_per_locale(pattern,scopes)
       ::I18n.available_locales.each_with_object({}) do |locale,segments|
         segment_name = ::I18n.interpolate(pattern,{:locale => locale})
         [scopes].flatten.each do |scope|
